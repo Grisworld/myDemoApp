@@ -38,23 +38,31 @@ public class AppTest extends TestCase
     }
     */
 	
-    public void testFound() {
-      ArrayList<Integer> array = new ArrayList<>(Arrays.asList(1, 2, 3, 4));
-      assertTrue(new App().search(array, 4));
-    }
-	
-    public void testNotFound() {
-      ArrayList<Integer> array = new ArrayList<>(Arrays.asList(1, 2, 3, 4));
-      assertFalse(new App().search(array, 5));
-    }
-	
-    public void testEmptyArray() {
-      ArrayList<Integer> array = new ArrayList<>();
-      assertFalse(new App().search(array, 1));
-    }
-	
-    public void testNull() {
-      assertFalse(new App().search(null, 1));
-    }
+    	    public void testfindBiggerOfSME() { //Equal
+		  ArrayList<Integer> array = new ArrayList<>(Arrays.asList(1, 2, 3, 4,1));
+		  ArrayList<Integer> array2 = new ArrayList<>(Arrays.asList(2, 3, 4, 5));
+	      	  assertTrue(154==App.findBiggerOfSM(array,array2,"Berkehan Salli","Koray Demir"));
+	    }
+		
+	    public void testfindBiggerOfSM() { //Negative
+	      ArrayList<Integer> array = new ArrayList<>(Arrays.asList(1, 2, 3, 4));
+	      ArrayList<Integer> array2 = new ArrayList<>(Arrays.asList(2, 3, 4, 5));
+	      assertFalse(-2==App.findBiggerOfSM(array,array2,"Oguz","Suleyman"));
+	    }
+		
+	    public void testEmptyStringsandArray() {
+	      ArrayList<Integer> array = new ArrayList<>();
+	      ArrayList<Integer> array2 = new ArrayList<>();
+	      assertTrue(0==App.findBiggerOfSM(array,array2, "",""));
+	    }
+		
+	    public void testNull() {
+	      assertTrue(-1==App.findBiggerOfSM(new ArrayList<Integer>(),null,"23" ,"31"));
+	    }
+	    public void testFindSumH() { //Find the highest one
+	      ArrayList<Integer> array = new ArrayList<>(Arrays.asList(1, 2, 3, 4,10));
+	      ArrayList<Integer> array2 = new ArrayList<>(Arrays.asList(5,6,7,8,50));
+	      assertTrue(1520==App.findBiggerOfSM(array,array2,"Furkan Danismaz","Umutcan Kaymaz"));
+	    }
 	
 }
